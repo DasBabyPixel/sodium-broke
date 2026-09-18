@@ -27,6 +27,14 @@ sourceSets.main.resources {
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name "CaffeineMC"
+        url "https://maven.caffeinemc.net/releases" // or /snapshots
+    }
+    maven {
+        name = "Sinytra"
+        url "https://maven.sinytra.org"
+    }
 }
 
 base {
@@ -103,6 +111,10 @@ dependencies {
     // And its provides the option to then use net.minecraft as the group, and one of; client, server or joined as the module name, plus the game version as version.
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
+
+    implementation "net.caffeinemc:sodium-neoforge-api:0.8.13+mc1.21.1"
+    implementation "net.caffeinemc:sodium-neoforge-mod:0.8.13+mc1.21.1"
+    implementation "net.caffeinemc:sodium-neoforge:0.8.13+mc1.21.1"
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
